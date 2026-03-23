@@ -3,7 +3,7 @@
   "publisher": "CoolVibes",
   "displayName": "CoolVibes",
   "description": "Access CoolVibes, the LGBTQIA+ social network and gay community platform, directly in a VS Code sidebar or panel.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "repository": {
     "type": "git",

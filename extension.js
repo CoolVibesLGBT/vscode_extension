@@ -120,6 +120,10 @@ function getWebviewHtml(webview, extensionUri, placement) {
         if (typeof value !== 'string' || !value.startsWith('/')) return value;
         return assetBaseUrl + value.replace(/^\\/+/, '');
       };
+      if (/\\/index\\.html?$/.test(window.location.pathname || '')) {
+        const normalizedUrl = '/' + (window.location.search || '') + (window.location.hash || '');
+        window.history.replaceState({}, '', normalizedUrl);
+      }
       window.__COOLVIBES_EXTENSION__ = Object.freeze({
         mode: 'vscode',
         placement: ${JSON.stringify(placement)},
