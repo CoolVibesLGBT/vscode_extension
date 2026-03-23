@@ -1,0 +1,58 @@
+{
+  "name": "coolvibes-vscode-extension",
+  "displayName": "CoolVibes",
+  "description": "Runs the existing CoolVibes web app inside a VS Code sidebar and panel.",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "media/webview/icons/icon_128x128.png",
+  "main": "./extension.js",
+  "activationEvents": [
+    "onView:coolvibes.sidebar",
+    "onCommand:coolvibes.openPanel"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "coolvibes.openPanel",
+        "title": "CoolVibes: Open Panel",
+        "category": "CoolVibes"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "coolvibes",
+          "title": "CoolVibes",
+          "icon": "media/webview/icons/icon_128x128.png"
+        }
+      ]
+    },
+    "views": {
+      "coolvibes": [
+        {
+          "type": "webview",
+          "id": "coolvibes.sidebar",
+          "name": "CoolVibes"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node ./scripts/build-webview.mjs",
+    "build:webview": "node ./scripts/build-webview.mjs"
+  },
+  "files": [
+    "extension.js",
+    "media/**/*",
+    "scripts/**/*",
+    "webview/**/*",
+    "README.md",
+    "package.json"
+  ]
+}

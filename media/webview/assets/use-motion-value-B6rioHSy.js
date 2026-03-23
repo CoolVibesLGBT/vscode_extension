@@ -1,0 +1,1 @@
+import{t as a,v as u,r as t,w as c}from"./index-CicaOMt5.js";function f(o){const e=a(()=>u(o)),{isStatic:s}=t.useContext(c);if(s){const[,n]=t.useState(o);t.useEffect(()=>e.on("change",n),[])}return e}export{f as u};
