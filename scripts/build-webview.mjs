@@ -44,6 +44,10 @@ const copyDirectoryContents = async (sourceDir, targetDir) => {
   const entries = await fs.readdir(sourceDir, { withFileTypes: true })
 
   for (const entry of entries) {
+    if (entry.name === '.DS_Store') {
+      continue
+    }
+
     const sourcePath = path.join(sourceDir, entry.name)
     const targetPath = path.join(targetDir, entry.name)
 
@@ -53,6 +57,23 @@ const copyDirectoryContents = async (sourceDir, targetDir) => {
     }
 
     await fs.copyFile(sourcePath, targetPath)
+  }
+}
+
+const removeFilesByName = async (rootDir, fileName) => {
+  const entries = await fs.readdir(rootDir, { withFileTypes: true })
+
+  for (const entry of entries) {
+    const entryPath = path.join(rootDir, entry.name)
+
+    if (entry.isDirectory()) {
+      await removeFilesByName(entryPath, fileName)
+      continue
+    }
+
+    if (entry.name === fileName) {
+      await fs.rm(entryPath, { force: true })
+    }
   }
 }
 
@@ -86,5 +107,6 @@ await build({
 
 await copyDirectoryContents(leafletImagesDir, path.join(outDir, 'images'))
 await copyDirectoryContents(katexFontsDir, path.join(outDir, 'fonts'))
+await removeFilesByName(outDir, '.DS_Store')
 
 console.log(`Built CoolVibes webview to ${outDir}`)

@@ -1,9 +1,18 @@
 {
   "name": "coolvibes-vscode-extension",
+  "publisher": "CoolVibesLGBT",
   "displayName": "CoolVibes",
   "description": "Runs the existing CoolVibes web app inside a VS Code sidebar and panel.",
   "version": "0.0.1",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CoolVibesLGBT/vscode_extension.git"
+  },
+  "homepage": "https://github.com/CoolVibesLGBT/vscode_extension",
+  "bugs": {
+    "url": "https://github.com/CoolVibesLGBT/vscode_extension/issues"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -45,14 +54,16 @@
   },
   "scripts": {
     "build": "node ./scripts/build-webview.mjs",
-    "build:webview": "node ./scripts/build-webview.mjs"
+    "build:webview": "node ./scripts/build-webview.mjs",
+    "vscode:prepublish": "node ./scripts/build-webview.mjs",
+    "package:vsix": "npx @vscode/vsce package",
+    "publish:marketplace": "npx @vscode/vsce publish"
   },
   "files": [
     "extension.js",
     "media/**/*",
-    "scripts/**/*",
-    "webview/**/*",
     "README.md",
+    "CHANGELOG.md",
     "package.json"
   ]
 }
