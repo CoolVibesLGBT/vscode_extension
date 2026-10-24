@@ -115,6 +115,36 @@ const webviewBrandAssets = {
   },
 }
 
+// Resolve CSS references before Vite's asset resolver, rather than leaving
+// browser-root paths and copied dependency assets unresolved until runtime.
+const webviewCssAssets = {
+  name: 'webview-css-assets',
+  enforce: 'pre',
+  transform(code, id) {
+    const sourcePath = id.split('?')[0]
+    if (!sourcePath.endsWith('.css')) return null
+    const updated = code.replace(
+      /url\(\s*(['"]?)([^)'"\s]+)\1\s*\)/g,
+      (match, quote, target) => {
+        if (/^\/(?:images|icons|animations|gifts|fonts|stickers|data)\//.test(target)) {
+          return `url(${quote}https://coolvibes.lgbt${target}${quote})`
+        }
+        let localFile
+        if (/^fonts\/KaTeX_[^/]+\.(?:woff2?|ttf)$/.test(target)) {
+          localFile = path.join(katexFontsDir, path.basename(target))
+        } else if (/^images\/(?:layers(?:-2x)?|marker-icon(?:-2x)?|marker-shadow)\.png$/.test(target)) {
+          localFile = path.join(leafletImagesDir, path.basename(target))
+        }
+        if (!localFile) return match
+        let relative = path.relative(path.dirname(sourcePath), localFile).split(path.sep).join('/')
+        if (!relative.startsWith('.')) relative = `./${relative}`
+        return `url(${quote}${relative}${quote})`
+      }
+    )
+    return updated === code ? null : { code: updated, map: null }
+  },
+}
+
 const copyDirectoryContents = async (sourceDir, targetDir) => {
   await fs.mkdir(targetDir, { recursive: true })
   const entries = await fs.readdir(sourceDir, { withFileTypes: true })
@@ -243,14 +273,28 @@ await build({
   mode: 'production',
   envDir: webRoot,
   publicDir: false,
-  plugins: [webviewBrandAssets, webWorkspaceResolver],
+  plugins: [webviewBrandAssets, webviewCssAssets, webWorkspaceResolver],
   resolve: {
     alias: {
       '@': path.join(webRoot, 'src'),
     },
   },
   css: {
-    postcss: webRoot,
+    postcss: {
+      plugins: [
+        requireFromWeb('@tailwindcss/postcss')(),
+        {
+          postcssPlugin: 'webview-imported-css-assets',
+          Once(root) {
+            root.walkDecls((declaration) => {
+              const sourcePath = declaration.source?.input.file || path.join(webRoot, 'src/index.css')
+              const result = webviewCssAssets.transform(declaration.value, sourcePath)
+              if (result) declaration.value = result.code
+            })
+          },
+        },
+      ],
+    },
   },
   build: {
     outDir,

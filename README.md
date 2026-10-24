@@ -1,109 +1,104 @@
 <p align="center">
-  <img src="https://coolvibes.lgbt/images/brand/dott-v3/wordmark.png" alt="CoolVibes" width="330">
+  <img src="https://coolvibes.lgbt/images/brand/dott-v3/wordmark.png" alt="CoolVibes — gay social network and LGBTQIA+ community" width="360">
 </p>
 
-# CoolVibes for Visual Studio Code
+# CoolVibes — Gay Social Network & LGBTQIA+ Dating
 
-**Your colors. Your people.** Bring the CoolVibes social and dating experience into VS Code: community posts, expressive profiles, discovery, conversations and more for the LGBTQIA+ community and respectful allies, aged **18 and over**.
+**Your colors. Your people.** CoolVibes is a **gay social network and dating community** where LGBTQIA+ adults and respectful allies can meet people, make friends, share their lives and find connections. Whether you are looking for a conversation, a local community, a date or people who share your interests, CoolVibes brings those experiences together.
 
-Open CoolVibes in the Activity Bar while you work, or use **CoolVibes: Open Panel** for a wider editor view. This extension bundles the current CoolVibes web application and loads its wordmark, illustrated icons and public media from coolvibes.lgbt. The VS Code extension icon remains included locally.
+With **CoolVibes for Visual Studio Code**, your community is a click away. Browse the feed, check your messages and explore profiles in the sidebar, or open a larger panel for more room. Use your existing CoolVibes account and connect with the same community you know from the website.
 
-[Website](https://coolvibes.lgbt) · [Brandkit](https://coolvibes.lgbt/brandkit) · [Support and issues](https://github.com/CoolVibesLGBT/vscode_extension/issues)
+**For adults aged 18 and over.** Gay, bi, lesbian, trans, queer and other LGBTQIA+ people, along with respectful allies, are welcome.
 
-## Features
+[Join CoolVibes](https://coolvibes.lgbt) · [Install from Marketplace](https://marketplace.visualstudio.com/items?itemName=CoolVibes.coolvibes-vscode-extension) · [Help and community rules](https://coolvibes.lgbt/legal)
 
-### Community and publishing
+## A community beyond the swipe
 
-Browse the community feed, read and write posts, reply, react and bookmark content. Share media and use the web application's rich editor, polls and event flows. Content visibility, uploads and moderation follow your account's service permissions.
+CoolVibes combines a social feed, personal profiles, friendship, dating, nearby discovery and messaging. Share something that matters to you, get to know someone through their posts and interests, or start a private conversation. You can participate in the wider community and build individual connections in the same place.
 
-### Profiles, friends and photos
+## Share your world
 
-Personalize your biography, interests, attributes and preferences. Explore profiles, followers and engagement lists, manage friend requests, and browse public and private photo tabs. Private-photo access requests and revocation use the same server permissions as the website.
+The **Pride community feed** is a place for updates, photos, conversations and everyday moments. Write text and media posts, reply to others, react to what they share and bookmark posts you want to revisit. Create polls to hear from the community and use event posts to share plans and collect responses.
 
-### Discovery, dating and places
+Explore community content and discover people through what they say and share, as well as their profile.
 
-Search for people, explore discovery and nearby views, and use likes and matches where available to your account. Discover places, view map and business details, and access check-in flows. Location-based results require location access and available service data.
+![CoolVibes community feed with posts, reactions and colorful navigation](docs/assets/screenshots/feed-en.png)
 
-### Private messages and groups
+## A profile that feels like you
 
-Access private and group conversations, replies, message editing, forwarding, pinned messages, attachments, stickers and GIFs. Manage group details, membership and invitation links through the existing CoolVibes messaging experience. Messaging requires the CoolVibes API and socket services.
+Express yourself with your biography, photos, interests, identity and preferences. Let people learn more about your personality and what you are looking for, then explore their profiles, posts and shared interests in return.
 
-### Live and community services
+Manage **friend requests**, view followers and profile engagement, and keep your public and private photos in their own profile tabs. Private-photo access requests let you decide who can see restricted albums, with options to approve requests and revoke access later. Visibility settings help you choose which personal details you share.
 
-Access live broadcast discovery and participation screens, community classifieds, wallet history and referral features offered by the web application. Broadcasts depend on media permissions and live-service tokens; financial actions depend on provider availability and account eligibility. Some web payment options are placeholders.
+<p align="center">
+  <img src="docs/assets/screenshots/profile-mobile-en.png" alt="CoolVibes profile showing a fictional member, profile tabs and personal details" width="320">
+</p>
 
-### Appearance and languages
+## Meet people, make friends and find dates
 
-Use light, dark or system appearance, accent colors, message sizing, chat gradients and wallpaper. The app includes **23 locale variants**, including English, Turkish, German, Spanish, French, Arabic, Nepali, Khmer, Chinese and Korean variants, with right-to-left support where appropriate. The responsive interface adapts to a narrow sidebar or a larger panel.
+Use search and discovery to explore the community, find people with interests that catch your attention and start new connections. **Likes and matches** add a dating experience alongside the social network, while **NearBy** helps you explore people around you when you choose to share your location.
 
-### Integrated with VS Code
+You decide whether a connection becomes a conversation, a friendship or something more. Discovery options and advanced features can vary with account membership and availability.
 
-- Open CoolVibes from its updated CV icon in the Activity Bar.
-- Run **CoolVibes: Open Panel** from the Command Palette for more room.
-- Keep authentication synchronized between the sidebar and panel using VS Code Secret Storage.
-- Open external web links in your browser through VS Code.
-- Load current brand artwork and illustrated icons from the CoolVibes website.
+## Keep the conversation going
 
-## Getting started
+Bring your conversations into VS Code with **private and group messaging**. Reply to a specific message, edit a message, forward something useful or pin information you want to keep easy to find. Share attachments, express yourself with emoji, stickers and GIFs, and continue the conversation with the people you meet.
 
-1. Install **CoolVibes** and select its icon in the Activity Bar.
-2. Sign in with your existing CoolVibes account.
-3. For a larger view, open the Command Palette and run **CoolVibes: Open Panel**.
+Create and manage groups, choose members, update group details and share invitation links. Public and private group options help you bring people together around friendships and shared interests.
 
-Account creation opens [coolvibes.lgbt](https://coolvibes.lgbt) in your browser so reCAPTCHA runs on the verified website domain. After registration, return to the extension and sign in.
+![CoolVibes messaging with a conversation list, message replies and fictional demo messages](docs/assets/screenshots/messages-en.png)
 
-Requires **Visual Studio Code 1.85 or later**, an internet connection and a CoolVibes account for authenticated features.
+## Discover places and community activity
 
-## Privacy, permissions and availability
+Explore **Places** to find locations and view map and place details. Check-in flows connect community activity with the places people visit. Use the **Classifieds** area to browse community listings and requests by category and open the ones that interest you.
 
-The extension connects to the CoolVibes HTTPS API and secure WebSocket services. Authentication is stored using VS Code Secret Storage and shared between this extension's views. Browser notifications, push notifications, service workers and analytics are disabled through the extension's runtime integration.
+Nearby discovery, maps and check-ins depend on available local information and your location permissions. Community listings are contributed content, not a guarantee or endorsement of a provider.
 
-Your account permissions, visibility preferences, blocking/reporting controls and service feature gates still apply. Device-dependent features such as location, camera, microphone and clipboard access depend on VS Code's webview and operating-system permissions. Some browser integrations may require the website. This extension does not claim end-to-end encrypted messaging or guaranteed support for live media and payments inside VS Code.
+## Explore live broadcasts and member features
 
-Read the current privacy policy and community rules in the website's [legal and community center](https://coolvibes.lgbt/legal).
+The **Live** area brings broadcast discovery and participation into the community experience. Explore available streams and participation options; broadcasting and joining can depend on membership, camera/microphone access and service availability. Open the website when a media permission or browser feature is needed.
 
-## What's new in 0.0.9
+CoolVibes also includes **Premium**, **Wallet** and **Referrals** areas for the membership options, balances, transaction history and referral rewards available to your account. Payment methods, rewards and financial actions depend on your region, account and supported providers; not every option is active everywhere.
 
-- Load menu/profile icons, public artwork, stickers and animations from coolvibes.lgbt to reduce package size.
-- Current CoolVibes web experience bundled directly from the web workspace.
-- Updated CV icon for the extension listing, Activity Bar and editor panel tab.
-- Fixed webview resource paths for the wordmark, illustrated icons and brandkit artwork.
-- Expanded this listing to describe current community, profile, discovery, messaging and personalization features.
-- Added a single-command build workflow with optional Marketplace publication.
+## Make CoolVibes your own
 
-See [CHANGELOG.md](CHANGELOG.md) for release history.
+Choose **light, dark or system appearance**, pick an accent color and personalize your conversations with message sizing, chat gradients, patterns and wallpaper. Preview your choices and create a look that feels comfortable for you, whether you use a narrow sidebar or a wide panel.
 
-## Build and publish
+![CoolVibes appearance settings with accent colors, themes and a chat preview](docs/assets/screenshots/appearance-en.png)
 
-Install the web workspace's dependencies with Yarn, then install the extension's dependencies:
+## Your community, in your language
 
-```bash
-yarn install --frozen-lockfile
-```
+CoolVibes includes **23 language and regional variants**: English, Turkish, German, Spanish, French, Arabic, Bengali, Persian, Hebrew, Hindi, Indonesian, Japanese, Khmer, Nepali, Polish, Portuguese, Russian, Thai, Chinese variants for mainland China, Hong Kong and Taiwan, and Korean variants for North and South Korea.
 
-Build the latest web source into a validated, installable VSIX:
+Arabic, Persian and Hebrew support right-to-left layouts. Localized welcome pages feature regional community artwork, so the experience feels closer to home from the start.
 
-```bash
-./deploy.sh
-# Or select a specific web workspace:
-./deploy.sh /absolute/path/to/web
-```
+![CoolVibes Turkish welcome page with localized community artwork](docs/assets/screenshots/landing-tr.png)
 
-The build discovers the sibling web workspace automatically. You can also set `COOLVIBES_WEB_ROOT`. It refreshes brand artwork, validates HTML/CSS asset references and packages the extension. Install the resulting `.vsix` using **Extensions → Install from VSIX…**.
+![CoolVibes Arabic welcome page with right-to-left navigation](docs/assets/screenshots/landing-ar.png)
 
-To build and publish the same package to the **CoolVibes** Marketplace publisher:
+## Choose what you share
 
-```bash
-./deploy.sh --publish
-# Or:
-./deploy.sh --publish /absolute/path/to/web
-```
+Use profile visibility, private-photo permissions, blocking and reporting controls to manage your experience. Treat other members with respect and follow the [community rules](https://coolvibes.lgbt/legal). Private conversations and restricted photos follow account access controls; private messaging is not a claim of end-to-end encryption.
 
-Publishing requires a configured `vsce` publisher login or the `VSCE_PAT` environment variable with Marketplace publishing permissions. Keep credentials out of source files. Increase the version in `package.json` before publishing another release.
+## Start using CoolVibes in VS Code
 
-## Support
+1. Install **CoolVibes** from the Visual Studio Marketplace.
+2. Select the **CoolVibes CV icon** in the Activity Bar.
+3. Sign in with your CoolVibes account and explore the community.
+4. For a larger view, open the Command Palette and select **CoolVibes: Open Panel**.
 
-- [CoolVibes website](https://coolvibes.lgbt)
+New here? Create your account at [coolvibes.lgbt](https://coolvibes.lgbt), then return to the extension and sign in. Your sign-in stays synchronized between the extension's sidebar and panel. External links open in your browser.
+
+You need **VS Code 1.85 or later**, an internet connection and a CoolVibes account for member features. Public artwork loads from the CoolVibes website. Location, live media and payments remain subject to device permissions and service availability; some actions may open or require the website.
+
+## About these screenshots
+
+These existing screenshots show the **actual CoolVibes web interface** used by the extension. Authenticated views contain fictional demonstration profiles and messages, not real members' private information. They illustrate the product at different screen sizes; they are not captures of VS Code's surrounding editor chrome.
+
+## Stay connected
+
+- [Visit CoolVibes](https://coolvibes.lgbt)
+- [Read help, privacy information and community rules](https://coolvibes.lgbt/legal)
 - [Report an extension issue](https://github.com/CoolVibesLGBT/vscode_extension/issues)
-- [Extension source](https://github.com/CoolVibesLGBT/vscode_extension)
-- [Web application and product documentation](https://github.com/CoolVibesLGBT/web)
+- [See release notes](CHANGELOG.md)
+- [Developer and publishing guide](DEVELOPMENT.md)

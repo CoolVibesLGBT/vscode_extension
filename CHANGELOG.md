@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.0.11
+
+- Rewrite the Marketplace listing around CoolVibes as a gay social network and LGBTQIA+ dating community
+- Add existing product screenshots for the feed, chat, profile, appearance and localized landing pages
+- Move build, authentication and publishing instructions to DEVELOPMENT.md
+
+## 0.0.10
+
+- Resolve public CSS image URLs to the CoolVibes domain before Vite processes styles
+- Resolve KaTeX fonts and Leaflet marker images from their installed packages during bundling
+- Remove unresolved CSS asset warnings without suppressing build diagnostics
+
 ## 0.0.9
 
 - Load public artwork, icons, stickers and animations from https://coolvibes.lgbt instead of embedding the public asset library

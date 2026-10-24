@@ -37,6 +37,11 @@ if [[ ! -x node_modules/.bin/vsce ]]; then
   yarn install --frozen-lockfile
 fi
 
+if [[ "$publish" == true ]]; then
+  node ./scripts/publish-marketplace.cjs --check-auth
+  export COOLVIBES_PUBLISH_LOGIN=0
+fi
+
 # The prepublish hook checks the extension, builds directly from the web
 # workspace, synchronizes brand icons, and validates bundled asset paths.
 yarn run package:vsix
@@ -44,5 +49,5 @@ node -e 'const path = require("node:path"); const p = require("./package.json");
 
 if [[ "$publish" == true ]]; then
   package_path="$(node -p 'const p = require("./package.json"); `${p.name}-${p.version}.vsix`')"
-  ./node_modules/.bin/vsce publish --packagePath "$package_path"
+  node ./scripts/publish-marketplace.cjs "$package_path"
 fi

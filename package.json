@@ -2,8 +2,8 @@
   "name": "coolvibes-vscode-extension",
   "publisher": "CoolVibes",
   "displayName": "CoolVibes",
-  "description": "CoolVibes LGBTQIA+ community and dating in VS Code: feeds, profiles, friends, discovery, private and group chats, and 23 locale variants.",
-  "version": "0.0.9",
+  "description": "CoolVibes gay social network and LGBTQIA+ dating community: meet people, share posts, discover nearby connections, and chat in VS Code.",
+  "version": "0.0.11",
   "private": true,
   "repository": {
     "type": "git",
@@ -24,14 +24,14 @@
   ],
   "keywords": [
     "coolvibes",
+    "gay",
     "lgbtqia",
-    "community",
     "social",
-    "chat",
     "dating",
+    "community",
+    "chat",
     "messaging",
-    "profiles",
-    "groups"
+    "friends"
   ],
   "galleryBanner": {
     "color": "#0f172a",
@@ -96,6 +96,7 @@
     "media/**/*",
     "README.md",
     "CHANGELOG.md",
-    "package.json"
+    "package.json",
+    "DEVELOPMENT.md"
   ]
 }
