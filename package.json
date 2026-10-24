@@ -2,8 +2,8 @@
   "name": "coolvibes-vscode-extension",
   "publisher": "CoolVibes",
   "displayName": "CoolVibes",
-  "description": "Access CoolVibes, the LGBTQIA+ social network and gay community platform, directly in a VS Code sidebar or panel.",
-  "version": "0.0.3",
+  "description": "CoolVibes LGBTQIA+ community and dating in VS Code: feeds, profiles, friends, discovery, private and group chats, and 23 locale variants.",
+  "version": "0.0.9",
   "private": true,
   "repository": {
     "type": "git",
@@ -16,10 +16,36 @@
   "engines": {
     "vscode": "^1.85.0"
   },
+  "extensionKind": [
+    "ui"
+  ],
   "categories": [
     "Other"
   ],
-  "icon": "media/webview/icons/icon_128x128.png",
+  "keywords": [
+    "coolvibes",
+    "lgbtqia",
+    "community",
+    "social",
+    "chat",
+    "dating",
+    "messaging",
+    "profiles",
+    "groups"
+  ],
+  "galleryBanner": {
+    "color": "#0f172a",
+    "theme": "dark"
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": {
+      "supported": true
+    }
+  },
+  "icon": "media/brand/icon.png",
   "main": "./extension.js",
   "activationEvents": [
     "onView:coolvibes.sidebar",
@@ -38,7 +64,7 @@
         {
           "id": "coolvibes",
           "title": "CoolVibes",
-          "icon": "media/webview/icons/icon_128x128.png"
+          "icon": "media/brand/icon.png"
         }
       ]
     },
@@ -53,11 +79,17 @@
     }
   },
   "scripts": {
+    "check": "node --check ./extension.js",
     "build": "node ./scripts/build-webview.mjs",
     "build:webview": "node ./scripts/build-webview.mjs",
-    "vscode:prepublish": "node ./scripts/build-webview.mjs",
-    "package:vsix": "npx @vscode/vsce package",
-    "publish:marketplace": "npx @vscode/vsce publish"
+    "vscode:prepublish": "yarn run check && yarn run build",
+    "package:vsix": "vsce package",
+    "publish:marketplace": "vsce publish",
+    "check:assets": "node scripts/checks/asset-paths.cjs",
+    "check:assets:browser": "node scripts/checks/webview-assets.cjs"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "3.9.2"
   },
   "files": [
     "extension.js",

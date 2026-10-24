@@ -1,0 +1,4 @@
+node_modules/
+*.vsix
+media/webview/
+.DS_Store
